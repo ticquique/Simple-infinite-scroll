@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Howdy</title>
+    <style>
+      .search-form {
+        position: sticky;
+        top: 0;
+        padding: 10px;
+        background-color: #fff;
+        z-index: 100;
+      }
+      #result {
+        position: relative;
+      }
+      .element {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.02);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="search-form">
+      <input type="search" name="search" id="search" />
+    </div>
+    <div id="result"></div>
+    <script src="main.js"></script>
+  </body>
+</html>
