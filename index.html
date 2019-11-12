@@ -1,38 +1,520 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Howdy</title>
-    <style>
-      .search-form {
-        position: sticky;
-        top: 0;
-        padding: 10px;
-        background-color: #fff;
-        z-index: 100;
+
+<head>
+  <title>Howdy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+    /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+    /* Document
+   ========================================================================== */
+
+    /**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+    html {
+      line-height: 1.15;
+      /* 1 */
+      -webkit-text-size-adjust: 100%;
+      /* 2 */
+    }
+
+    /* Sections
+   ========================================================================== */
+
+    /**
+ * Remove the margin in all browsers.
+ */
+
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+
+    }
+
+    /**
+ * Render the `main` element consistently in IE.
+ */
+
+    main {
+      display: block;
+    }
+
+    /**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+    h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
+
+    /* Grouping content
+   ========================================================================== */
+
+    /**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+    hr {
+      box-sizing: content-box;
+      /* 1 */
+      height: 0;
+      /* 1 */
+      overflow: visible;
+      /* 2 */
+    }
+
+    /**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+    pre {
+      font-family: monospace, monospace;
+      /* 1 */
+      font-size: 1em;
+      /* 2 */
+    }
+
+    /* Text-level semantics
+   ========================================================================== */
+
+    /**
+ * Remove the gray background on active links in IE 10.
+ */
+
+    a {
+      background-color: transparent;
+    }
+
+    /**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+    abbr[title] {
+      border-bottom: none;
+      /* 1 */
+      text-decoration: underline;
+      /* 2 */
+      text-decoration: underline dotted;
+      /* 2 */
+    }
+
+    /**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+    b,
+    strong {
+      font-weight: bolder;
+    }
+
+    /**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+    code,
+    kbd,
+    samp {
+      font-family: monospace, monospace;
+      /* 1 */
+      font-size: 1em;
+      /* 2 */
+    }
+
+    /**
+ * Add the correct font size in all browsers.
+ */
+
+    small {
+      font-size: 80%;
+    }
+
+    /**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sub {
+      bottom: -0.25em;
+    }
+
+    sup {
+      top: -0.5em;
+    }
+
+    /* Embedded content
+   ========================================================================== */
+
+    /**
+ * Remove the border on images inside links in IE 10.
+ */
+
+    img {
+      border-style: none;
+    }
+
+    /* Forms
+   ========================================================================== */
+
+    /**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      /* 1 */
+      font-size: 100%;
+      /* 1 */
+      line-height: 1.15;
+      /* 1 */
+      margin: 0;
+      /* 2 */
+    }
+
+    /**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+    button,
+    input {
+      /* 1 */
+      overflow: visible;
+    }
+
+    /**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+    button,
+    select {
+      /* 1 */
+      text-transform: none;
+    }
+
+    /**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      -webkit-appearance: button;
+    }
+
+    /**
+ * Remove the inner border and padding in Firefox.
+ */
+
+    button::-moz-focus-inner,
+    [type="button"]::-moz-focus-inner,
+    [type="reset"]::-moz-focus-inner,
+    [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    /**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+    button:-moz-focusring,
+    [type="button"]:-moz-focusring,
+    [type="reset"]:-moz-focusring,
+    [type="submit"]:-moz-focusring {
+      outline: 1px dotted ButtonText;
+    }
+
+    /**
+ * Correct the padding in Firefox.
+ */
+
+    fieldset {
+      padding: 0.35em 0.75em 0.625em;
+    }
+
+    /**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+    legend {
+      box-sizing: border-box;
+      /* 1 */
+      color: inherit;
+      /* 2 */
+      display: table;
+      /* 1 */
+      max-width: 100%;
+      /* 1 */
+      padding: 0;
+      /* 3 */
+      white-space: normal;
+      /* 1 */
+    }
+
+    /**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+    progress {
+      vertical-align: baseline;
+    }
+
+    /**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+    textarea {
+      overflow: auto;
+    }
+
+    /**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+    [type="checkbox"],
+    [type="radio"] {
+      box-sizing: border-box;
+      /* 1 */
+      padding: 0;
+      /* 2 */
+    }
+
+    /**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+    [type="number"]::-webkit-inner-spin-button,
+    [type="number"]::-webkit-outer-spin-button {
+      height: auto;
+    }
+
+    /**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+    [type="search"] {
+      -webkit-appearance: textfield;
+      /* 1 */
+      outline-offset: -2px;
+      /* 2 */
+    }
+
+    /**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+    [type="search"]::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    /**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      /* 1 */
+      font: inherit;
+      /* 2 */
+    }
+
+    /* Interactive
+   ========================================================================== */
+
+    /*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+    details {
+      display: block;
+    }
+
+    /*
+ * Add the correct display in all browsers.
+ */
+
+    summary {
+      display: list-item;
+    }
+
+    /* Misc
+   ========================================================================== */
+
+    /**
+ * Add the correct display in IE 10+.
+ */
+
+    template {
+      display: none;
+    }
+
+    /**
+ * Add the correct display in IE 10.
+ */
+
+    [hidden] {
+      display: none;
+    }
+  </style>
+  <style>
+    body {
+      color: #333;
+      font-size: 14px;
+    }
+
+    .search-form {
+      position: sticky;
+      top: 0;
+      padding: 10px;
+      background-color: #fff;
+      z-index: 100;
+    }
+
+    #result {
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.02);
+      display: flex;
+      justify-content: center;
+    }
+
+    .element {
+      box-sizing: border-box;
+      position: absolute;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 100px auto auto;
+      grid-template-rows: auto;
+      grid-template-areas: "image content link";
+      max-width: 500px;
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .search-result {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .location {
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .location::before {
+      display: inline-block;
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      top: 40%;
+      transform: translateY(-50%);
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-61 0 512 512'%3E%3Cpath d='m195 0c-107.523438 0-195 87.476562-195 195 0 80.855469 88.414062 217.402344 143.011719 278.761719 29.980469 33.695312 43.105469 38.238281 51.988281 38.238281s22.007812-4.542969 51.988281-38.238281c54.53125-61.285157 143.011719-197.882813 143.011719-278.761719 0-107.523438-87.476562-195-195-195zm34.382812 448.320312c-20.34375 23.671876-30.71875 30.980469-34.382812 33.078126-3.664062-2.097657-14.039062-9.40625-34.382812-33.078126-52.902344-61.5625-130.617188-185.796874-130.617188-253.320312 0-90.980469 74.019531-165 165-165s165 74.019531 165 165c0 67.066406-76.847656 190.75-130.617188 253.320312zm0 0'/%3E%3Cpath d='m195 60c-74.4375 0-135 60.5625-135 135s60.5625 135 135 135 135-60.5625 135-135-60.5625-135-135-135zm-54.777344 45.453125c14.175782 2.460937 24.777344 14.738281 24.777344 29.546875 0 16.542969-13.457031 30-30 30-14.804688 0-27.085938-10.601562-29.546875-24.777344 8.6875-14.144531 20.625-26.082031 34.769531-34.769531zm54.777344 194.546875c-57.898438 0-105-47.101562-105-105 0-6.292969.558594-12.457031 1.625-18.449219 10.921875 11.398438 26.308594 18.449219 43.375 18.449219 33.085938 0 60-26.914062 60-60 0-17.066406-7.050781-32.453125-18.449219-43.375 5.992188-1.066406 12.15625-1.625 18.449219-1.625 57.898438 0 105 47.101562 105 105s-47.101562 105-105 105zm0 0'/%3E%3C/svg%3E");
+    }
+
+    .photo_container {
+      grid-area: image;
+      text-align: center;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .content_container {
+      grid-area: content;
+    }
+
+    .link_container {
+      grid-area: link;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
+      align-items: flex-end;
+    }
+
+    .profile_name {
+      margin: 0 0 .3rem 0;
+    }
+
+    .message_badge {
+      display: block;
+      height: 20px;
+      width: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath d='M464,64H48C21.49,64,0,85.49,0,112v288c0,26.51,21.49,48,48,48h416c26.51,0,48-21.49,48-48V112 C512,85.49,490.51,64,464,64z M452.48,96L256,236.32L59.52,96H452.48z M480,400c0,8.837-7.163,16-16,16H48 c-8.837,0-16-7.163-16-16V115.68l214.72,153.28c5.555,3.955,13.005,3.955,18.56,0L480,115.68V400z'/%3E%3C/g%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E");      background-position: 0 0;
+      background-size: contain;
+    }
+
+    .phone_number {
+      display: block;
+      height: 20px;
+      width: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' id='Capa_1' x='0px' y='0px' viewBox='0 0 498.08 498.08' style='enable-background:new 0 0 498.08 498.08;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M357.147,258.4c-6.241-6.204-16.319-6.204-22.56,0l-56.64,56.96l-90.56-90.56l56.64-56.64 c6.204-6.241,6.204-16.319,0-22.56L131.067,32.16c-6.241-6.204-16.319-6.204-22.56,0l-80,80 c-31.237,28.954-33.088,77.749-4.134,108.986c1.325,1.43,2.704,2.809,4.134,4.134l249.44,248 c14.236,15.372,34.094,24.319,55.04,24.8c8.005-0.054,15.948-1.405,23.52-4c12.882-4.367,24.67-11.462,34.56-20.8l79.2-79.2 c6.204-6.241,6.204-16.319,0-22.56L357.147,258.4z M368.507,450.4c-16.782,18.778-45.609,20.395-64.387,3.613 c-1.271-1.136-2.477-2.342-3.613-3.613l-124.48-124.48L51.067,201.76c-18.734-16.831-20.275-45.663-3.444-64.396 c1.086-1.208,2.235-2.358,3.444-3.444l68.48-67.84l90.56,90.56l-45.28,45.12c-12.504,12.49-12.515,32.751-0.025,45.255 c0.008,0.008,0.017,0.017,0.025,0.025l90.56,90.56c12.49,12.504,32.751,12.515,45.255,0.025c0.008-0.008,0.017-0.017,0.025-0.025 l45.28-45.28l90.56,90.56L368.507,450.4z'/%3E%3Cpath d='M323.067,187.36h96v-32h-57.44l132.64-132.64L471.707,0l-132.64,132.8V75.36h-32v96 C307.067,180.197,314.231,187.36,323.067,187.36z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E");
+      background-size: contain;
+    }
+
+    .image_container {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 48px;
+      height: 48px;
+    }
+
+    p {
+      margin: .25rem 0;
+    }
+
+    @keyframes apear {
+      from {
+        opacity: 0;
       }
 
-      #result {
-        position: relative;
+      to {
+        opacity: 1;
       }
+    }
+  </style>
+</head>
 
-      .element {
-        position: absolute;
-        width: 100%;
-        display: flex;
-        background-color: rgba(0, 0, 0, 0.02);
-      }
-
-      .search-result {
-        background-color: aqua;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="search-form">
-      <input type="search" name="search" id="search" />
-    </div>
+<body>
+  <div class="search-form">
+    <input type="search" name="search" id="search" />
+  </div>
+  <div id="listContainer" style="height: 600px;overflow: auto;">
     <div id="result"></div>
-    <script src="main.js"></script>
-  </body>
+  </div>
+  <script src="main.js"></script>
+</body>
+
 </html>

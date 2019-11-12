@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-const jsonPromise = fetch("a.json");
+const jsonPromise = fetch("e.json");
 let navHeight = 1920;
-let divSize = 50;
+let divSize = 150;
 let jsonData = [];
 let oldInitial = 0;
 let oldEnd = 0;
@@ -22,7 +22,8 @@ const emitValue = (cmd, val) => {
  * @param {string} search Element searched
  */
 const checkElement = (element, search) => {
-  return element.name.includes(search);
+  const name = `${element.name.first} ${element.name.last}`;
+  return name.includes(search);
 };
 
 /**
